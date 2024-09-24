@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 public class GenAIController {
@@ -34,10 +36,26 @@ public class GenAIController {
      * @param prompt
      * @return
      */
+//    @GetMapping("generate-image")
+//    public void generateImages(HttpServletResponse response, @RequestParam String prompt) throws IOException {
+//        ImageResponse imageResponse = imageService.generateImage(prompt);
+//        String imageUrl = imageResponse.getResult().getOutput().getUrl();
+//        response.sendRedirect(imageUrl);
+//    }
+
+
     @GetMapping("generate-image")
-    public void generateImages(HttpServletResponse response, @RequestParam String prompt) throws IOException {
+    public List<String> generateImages(HttpServletResponse response, @RequestParam String prompt) throws IOException {
         ImageResponse imageResponse = imageService.generateImage(prompt);
-        String imageUrl = imageResponse.getResult().getOutput().getUrl();
-        response.sendRedirect(imageUrl);
+//        String imageUrl = imageResponse.getResult().getOutput().getUrl();
+//        response.sendRedirect(imageUrl);
+
+        /* to get links of Url then I need to use stream() from Java8 */
+
+       List<String> imageUrls =  imageResponse.getResults()
+                .stream()
+                .map(result -> result.getOutput().getUrl())
+                .collect(Collectors.toList());
+        return imageUrls;
     }
 }
