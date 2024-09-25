@@ -1,0 +1,149 @@
+/* Base styles */
+.App {
+  text-align: center;
+  max-width: 1200px; /* Increased max-width for larger screens */
+  margin: 0 auto;
+  padding: 20px;
+  width: 100%; /* Ensures the app container spans 100% of the screen width */
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  flex-wrap: wrap; /* Allows tabs to wrap on smaller screens */
+}
+
+button {
+  padding: 10px 20px;
+  cursor: pointer;
+  border: none;
+  background-color: #f0f0f0;
+  font-weight: bold;
+  flex: 1 1 auto; /* Makes buttons responsive */
+  margin: 5px; /* Adds margin for better spacing */
+  min-width: 100px; /* Ensures buttons don't get too small */
+}
+
+button.active {
+  background-color: #007bff;
+  color: #fff;
+}
+
+input {
+  padding: 10px;
+  width: calc(100% - 22px);
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.tab-content {
+  margin-top: 20px;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid layout */
+  gap: 10px;
+  margin-top: 20px;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+}
+
+.empty-image-slot {
+  width: 100%;
+  height: 0;
+  padding-bottom: 75%; /* Maintain aspect ratio for empty slots */
+  border: 2px dashed #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.output {
+  margin-top: 20px;
+  text-align: left;
+  background-color: #f4f4f4;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.recipe-text {
+  max-width: 100%; /* Adjust based on your specific layout needs */
+  padding: 10px;
+  box-sizing: border-box; /* Ensures padding is included in width calculation */
+  word-wrap: break-word;
+  overflow-y: auto; /* Allows scrolling for excessive text */
+  font-size: calc(12px + 0.5vw); /* Responsive font size */
+  line-height: 1.6; /* Improves readability */
+  border: 1px solid #ccc; /* Optional: adds a border around the text container */
+  margin-bottom: 20px; /* Spacing below the text container */
+}
+
+/* Responsive Styles */
+
+/* For smaller mobile screens */
+@media (max-width: 600px) {
+  .tabs {
+    flex-direction: column; /* Stack tabs vertically on small screens */
+  }
+
+  .image-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Smaller columns for mobile */
+  }
+
+  .output {
+    font-size: 14px; /* Reduce font size for smaller screens */
+  }
+
+  .App {
+    padding: 10px; /* Reduce padding on smaller screens */
+  }
+
+  button {
+    padding: 8px 16px; /* Reduce button padding for smaller devices */
+    font-size: 14px; /* Adjust button text size */
+  }
+
+  .recipe-text {
+    font-size: calc(11px + 0.5vw); /* Further adjust font size for readability */
+  }
+}
+
+/* For tablets */
+@media (min-width: 601px) and (max-width: 900px) {
+  .tabs {
+    flex-direction: row;
+  }
+
+  .image-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Adjust column width for tablets */
+  }
+
+  .output {
+    font-size: 16px;
+  }
+
+  .recipe-text {
+    font-size: calc(12px + 0.5vw);
+  }
+}
+
+/* For larger screens */
+@media (min-width: 1200px) {
+  .App {
+    padding: 30px; /* Increase padding for larger screens */
+  }
+
+  .image-grid {
+    grid-template-columns: repeat(5, 1fr); /* More columns on larger screens */
+  }
+
+  .recipe-text {
+    font-size: calc(14px + 0.5vw); /* Adjust font size for readability */
+  }
+}
