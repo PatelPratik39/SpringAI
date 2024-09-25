@@ -10,10 +10,15 @@ const ImageGenerator = () => {
         `http://localhost:8080/generate-image?prompt=${prompt}`
       );
       console.log(prompt);
-
       const urls = await resposne.json();
       console.log(urls);
-      setImageUrl(urls);
+      // Ensure that 'urls' is an array
+      if (Array.isArray(urls)) {
+        setImageUrl(urls);
+      } else {
+        console.error("Expected an array, but got:", urls);
+        setImageUrl([]); // Reset to empty array if the response is invalid
+      }
     } catch (error) {
       console.error("Error in Generating Image : ", error);
     }
