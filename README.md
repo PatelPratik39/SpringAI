@@ -7,3 +7,6 @@
 ![Image description](./assets/SpringAI_Postman_Generated_Recipe1.png)
 ![Image description](./assets/SpringAI_Postman_Generated_Recipe2.png)
 ![Image description](./assets/SpringAI_Postman_Generated_Recipe3.png)
+
+# ReactJS 
+![Image description](./assets/SpringAI_ImageGen_React1.png)
