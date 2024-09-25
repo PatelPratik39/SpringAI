@@ -15,7 +15,7 @@ const Chat = () => {
       setChatResposne(data);
       setPrompt("");
     } catch (error) {
-      console.error("Error in Generating Image : ", error);
+      console.error("Error in Generating Response : ", error);
     }
   };
 
