@@ -2,7 +2,7 @@
 
 # ReactJS 
 ![Image description](./assets/SpringAI_ImageGen_React1.png)
-![Image description](./assets/Ai_chat.png)
+![Image description](./assets/Ai_Chat.png)
 ![Image description](./assets/Ai1.png)
 ![Image description](./assets/Ai2.png)
 
