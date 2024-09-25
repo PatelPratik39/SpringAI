@@ -18,19 +18,19 @@ function App() {
           className={activeTab === "image-generator" ? "active" : " "}
           onClick={() => handleTabChange("image-generator")}
         >
-          Image Gnerator
+          Image Gnerator 🌁
         </button>{" "}
         <button
           className={activeTab === "chat" ? "active" : " "}
           onClick={() => handleTabChange("chat")}
         >
-          Chat Gnerator
+          Ask to AI 🤖
         </button>{" "}
         <button
           className={activeTab === "recipe-generator" ? "active" : " "}
           onClick={() => handleTabChange("recipe-generator")}
         >
-          Recipe Gnerator
+          Recipe Gnerator 🍲
         </button>
         <div>
           {activeTab === "image-generator" && <ImageGenerator />}

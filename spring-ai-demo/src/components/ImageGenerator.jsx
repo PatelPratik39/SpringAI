@@ -34,7 +34,7 @@ const ImageGenerator = () => {
           onChange={(e) => setPrompt(e.target.value)}
           placeholder="Enter Prompt here... 💬"
         />
-        <button onClick={genrateImage}>Generate Image</button>
+        <button onClick={genrateImage}>Generate Image 📸</button>
 
         {/* Display the Image Grid */}
 

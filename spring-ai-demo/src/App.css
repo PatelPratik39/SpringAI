@@ -67,7 +67,7 @@ img {
 .output {
   margin-top: 20px;
   text-align: left;
-  background-color: #f4f4f4;
+  background-color: rgb(127, 126, 126);
   padding: 10px;
   border-radius: 5px;
 }
